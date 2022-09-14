@@ -63,6 +63,7 @@ h5 {
 }
 
 i {
+    width: fit-content;
     color: gray;
     font-size: var(--iFontSize);
     
