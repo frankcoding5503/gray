@@ -1,33 +1,31 @@
 
 window.addEventListener("scroll", ()=>{
-    let offset = window.scrollY;
     let headcard = document.getElementById("headcard");
-
-    headcard.style.transform = `translateY(${offset * 0.4 + "px"})`;
+    let offset = window.pageYOffset;
+    
+    headcard.style.top = offset * 0.1 + 20 + "vh";
 })
 
-const btn_nextCat = document.getElementById('nextCat');
-const btn_prevCat = document.getElementById('prevCat');
+const btn_nextCat = document.getElementById('btn-nextCat');
+const btn_prevCat = document.getElementById('btn-prevCat');
+
 const allDivInContainer = document.querySelectorAll('.slider-container .slider-cat');
-for(let i = 0; i < allDivInContainer.length; i++){
-    document.getElementById("DotContainer").innerHTML += '<div class="dot"></div>';
-}
+for(let i = 0; i < allDivInContainer.length; i++) document.getElementById("DotContainer").innerHTML += '<div class="dot"></div>';
+
 const allDotInContainer = document.querySelectorAll('.dot-container .dot');
 allDotInContainer[0].style.backgroundColor = "gray";
 
 let index = 0;
 btn_nextCat.addEventListener("click", function(){
-    if(index == allDivInContainer.length - 1){
-        index = -1;
-    }
+    if(index == allDivInContainer.length - 1) index = -1;
+
     allDivInContainer[++index].scrollIntoView({behavior: "smooth"});
     allDotInContainer[index].style.backgroundColor = "gray";
     allDotInContainer[index - 1 == -1 ? allDotInContainer.length - 1 : index - 1].style.backgroundColor = "lightgray";
 });
 btn_prevCat.addEventListener("click", function(){
-    if(index == 0){
-        index = allDivInContainer.length;
-    }
+    if(index == 0) index = allDivInContainer.length;
+    
     allDivInContainer[--index].scrollIntoView({behavior: "smooth"});
     allDotInContainer[index].style.backgroundColor = "gray";
     allDotInContainer[index + 1 == allDotInContainer.length ? 0 : index + 1].style.backgroundColor = "lightgray";
