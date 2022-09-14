@@ -1,4 +1,3 @@
-
 window.addEventListener("scroll", ()=>{
     let headcard = document.getElementById("headcard");
     let offset = window.pageYOffset;
@@ -52,18 +51,17 @@ btn_prevCat.addEventListener("click", function(){
 //     secBlock.innerHTML = `<h4>sec</h4><h4>${seconds}</h4>`;
 // }, 1000)
 
-const btn_nextCard = document.getElementById('nextCard');
-const btn_prevCard = document.getElementById('prevCard');
-const card1 = document.getElementById('act-1');
-const card2 = document.getElementById('act-2');
-const card3 = document.getElementById('act-3');
+const btn_nextCard = document.getElementById('btn-nextCard');
+const btn_prevCard = document.getElementById('btn-prevCard');
+let cardDeck = []
+let actCardContainer = document.getElementById('actCard-container').getElementsByClassName("act-card");
 
-let cardDeck = [card3, card2, card1];
+let zIndex = 0;
+for(let i = actCardContainer.length - 1; i >= 0; i--){
+    actCardContainer[i].style.zIndex = zIndex++;
+    cardDeck.push(actCardContainer[i]);
+}
 const lastIndex = cardDeck.length - 1;
-
-card1.style.zIndex = 2;
-card2.style.zIndex = 1;
-card3.style.zIndex = 0;
 
 btn_nextCard.addEventListener("mouseover", function(){
     cardDeck[lastIndex].style.transformOrigin = "20% 100%";
@@ -75,16 +73,14 @@ btn_nextCard.addEventListener("mouseleave", function(){
 btn_prevCard.addEventListener("mouseover", function(){
     cardDeck[0].style.transformOrigin = "100% 20%";
     cardDeck[0].style.transform = "rotate(5deg)";
-
 });
 btn_prevCard.addEventListener("mouseleave", function(){
     cardDeck[0].style.transform = "rotate(0deg)";
 });
 
 btn_nextCard.addEventListener("click", function(){
-    cardDeck[lastIndex].style.transformOrigin = "20% 100%";
     cardDeck[lastIndex].style.opacity = 0;
-    cardDeck[lastIndex].style.transform = "translate(-25%, -25%)"
+    cardDeck[lastIndex].style.transform = "translate(-20%, -20%)"
 
     const temp = cardDeck.pop();
 
@@ -97,11 +93,9 @@ btn_nextCard.addEventListener("click", function(){
         cardDeck[0].style.opacity = 1;
     },500);
 });
-
 btn_prevCard.addEventListener("click", function(){
-    cardDeck[0].style.transformOrigin = "100% 20%";
     cardDeck[0].style.opacity = 0;
-    cardDeck[0].style.transform = "translate(-25%, -25%)";
+    cardDeck[0].style.transform = "translate(-20%, -20%)";
 
     const temp = cardDeck.shift();
 
