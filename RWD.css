@@ -1,0 +1,321 @@
+@media only screen and (max-width: 1200px) {
+    :root {
+        --Light: #c4d3e4;
+        --Medium: #394c5d;
+        --Dark: #343b47;
+    
+        --DarkBlue: #1e3454;
+        --DarkGreen: #33444b;
+    
+        --TextLight: var(--Light);
+        --TextDark: var(--Medium);
+
+        --h2MarginTop:  1%;
+        --h3MarginTop:  1.5%;
+        --h4MarginTop:  2%;
+        --h5MarginTop:  3%;
+
+        font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    #headcard {
+        width: 90vw;
+    }
+    .person-title {
+        height: 20vh;
+    }
+    
+    .person-detail {
+        height: 80vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0 3%;
+    }
+
+    .person-detail-pictures {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .person-detail-picture img{
+        width: 30vh;
+        height: 30vh;
+        margin-top: 0;
+    }
+
+    .person-detail-about {
+        grid-row: 1;
+        justify-content: center;
+    }
+
+    .person-detail-intro {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    }
+
+    .slider-container{
+        width: 95vw;
+        height: 80vh;    
+    }
+    .slider-cat {
+        width: 95vw;
+        height: 80vh;
+        flex-direction: column;
+    }
+    .slider-title{
+        text-align: center;
+        width: 100%;
+        height: 20%;
+    }
+    .slider-cat-card-wrap{
+        width: 100%;
+        height: 80%;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    #nextCat { right: 1.5%; }
+    #prevCat { left: 1.5%; }
+    .dot-container {
+        display: none;
+    }
+
+    .card-cat-title {
+        justify-content: center;
+    }
+    .card-cat-split{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .card-cat-split div img {
+        width: 13vh;
+        height: 13vh;
+        margin-bottom: 0;
+    }
+
+    .card-act {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .card-act-word button {
+        position: relative;
+    }
+
+    .card-act-picture .act-picture-box {
+        width: 30%;
+        height: 80%;
+    }
+
+    .card-act-picture .act-picture-box img {
+        top: -15%;
+        left: -15%;
+    }
+
+    a {
+        margin-top: 1.5rem;
+    }
+    
+}
+
+@media only screen and (max-width: 900px) {
+    :root {
+        --Light: #c4d3e4;
+        --Medium: #394c5d;
+        --Dark: #343b47;
+    
+        --DarkBlue: #1e3454;
+        --DarkGreen: #33444b;
+    
+        --TextLight: var(--Light);
+        --TextDark: var(--Medium);
+
+        --h2MarginTop:  0;
+        --h3MarginTop:  1%;
+        --h4MarginTop:  1.5%;
+        --h5MarginTop:  2%;
+
+        font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+    }
+    html {
+        font-size: 14px;
+    }
+
+    #headcard {
+        width: 90vw;
+    }
+    .person-title {
+        height: 100%;
+    }
+    .person-detail {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr 2fr;
+        padding: 0 3%;
+    }
+
+    .person-detail-pictures {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .person-detail-picture img{
+        width: 18vh;
+        height: 18vh;
+        margin-top: 0;
+    }
+    .person-detail-about {
+        grid-row: 2;
+        text-align: center;
+        align-items: center;
+    }
+    .person-detail-intro {
+        grid-row: 3;
+    }
+
+    .slider-cat {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .slider-title{
+        text-align: center;
+        width: 100%;
+        height: 10%;
+    }
+    .slider-cat-card-wrap{
+        width: 100%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .slider-cat-card {
+        width: 100%;
+        height: 30%;
+        display: flex;
+    }
+    .slider-cat-card img{
+        width: 85%;
+        height: 100%; 
+    }
+    #nextCat, #prevCat {
+        top: 90%;
+    }
+    #nextCat { right: 40%; }
+    #prevCat { left: 40%; }
+
+    .card-cat-title {
+        height: 15vh;
+        justify-content: center;
+    }
+    .card-cat-split{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        align-items: flex-start;
+    }
+    .card-cat-split div img {
+        display: none;
+    }
+
+    .card-act {
+        height: 80vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .card-act-word button {
+        position: relative;
+    }
+
+    .card-act-picture .act-picture-box {
+        width: 50%;
+        height: 60%;
+    }
+
+    .card-act-picture .act-picture-box img {
+        top: -18%;
+        left: -18%;
+    }
+
+    a {
+        margin-top: 1.5rem;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --Light: #c4d3e4;
+        --Medium: #394c5d;
+        --Dark: #343b47;
+    
+        --DarkBlue: #1e3454;
+        --DarkGreen: #33444b;
+    
+        --TextLight: var(--Light);
+        --TextDark: var(--Medium);
+    
+        --aFontSize: 13px;
+        --btnFontSize: 0.8rem;
+        --iFontSize: 1.5rem;
+
+        --h2MarginTop:  0;
+        --h3MarginTop:  1%;
+        --h4MarginTop:  1.5%;
+        --h5MarginTop:  2%;
+
+        font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+    }
+    html {
+        font-size: 12px;
+    }
+
+    .slider-container {
+        width: 90vw;
+        height: 90vh;
+    }
+    .slider-cat {
+        width: 90vw;
+        height: 90vh;
+    
+        display: flex;
+        flex-direction: column;
+    
+        scroll-snap-align: center;
+    }
+    
+    .slider-cat-card-wrap{
+        width: 100%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .slider-cat-card {
+        width: 100%;
+        height: 33%;
+        border: 1px solid lightgray;
+    }
+    #nextCat, #prevCat {
+        top: 96%;
+    }
+    
+    #nextCard { 
+        right: 35%;
+        bottom: 4%; 
+    }
+    #prevCard { 
+        right: 60%;
+        top: 94%; 
+    }
+}
+
+@media only screen and (max-width: 380px){
+    #nextCard { 
+        bottom: 3.5%; 
+    }
+}
