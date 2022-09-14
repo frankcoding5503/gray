@@ -29,7 +29,11 @@
     font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
 ::-webkit-scrollbar { display: none; }
-html { font-size: var(--originalFontSize); }
+html { 
+    font-size: var(--originalFontSize); 
+    scroll-snap-type: y mandatory;
+}
+
 h1 {
     font-weight: 900;
     font-size: var(--h1FontSize);
@@ -57,19 +61,21 @@ h5 {
     margin-top: var(--h5MarginTop);
     line-height: 1.5;
 }
+
 i {
     width: fit-content;
-    color: gray;
+    color: var(--Dark);
     font-size: var(--iFontSize);
-    
+    opacity: 0.4;
+
     transition: all 0.5s;
-    opacity: 0.7;
 }
 i:hover { 
     opacity: 1; 
 }
+
 a {
-    display: block;
+    display: inline-block;
     font-size: var(--aFontSize);
     margin-top: 3rem;
     color: lightgray;
@@ -82,17 +88,14 @@ a:hover {
 
 button {
     font-size: var(--btnFontSize);
-}
-button {
-    background-color: white;
-    border: 2px solid gray;
     color: gray;
     padding: 4px 8px;
+    border: 2px solid gray;
+    background-color: white;
 }
 button:hover {
     background-color: gray;
     color: white;
-    padding: 4px 8px;
 }
 
 * {
@@ -102,179 +105,171 @@ button:hover {
     box-sizing: border-box;
     text-decoration: none;
 }
-
-body, html {
-    scroll-snap-type: y mandatory;
-}
+/* 以上都是基本定義 */
 
 section[class*="view"]{
     scroll-snap-align: center;
+    width: 100vw;
     height: 100vh;
+    overflow: scroll;
 }
 /* 所有 view 都會有滑動鎖定的效果 */
+
+/* 標題 */
 .view-head {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
     overflow: hidden;
+    position: relative;
 }
-
 #headcard {
     width: 50vw;
     height: 50vh;
     
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    border: 8px solid var(--Medium);
+    border: 8px solid var(--Dark);
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    position: relative;
-    transition: all 100ms;
+    position: absolute; 
+    left: 25%;
 }
+/************************/
 
-/*****************/
+/* 簡介 */
 .view-person {
     background-color: white;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
 }
 
 .person-title {
     width: 100%;
     height: 30vh;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 }
 
 .person-detail {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
     height: 70vh;
- 
-    padding: 0 3%;
+    padding: 0 2%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
 .person-detail-picture {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 .person-detail-picture img {
     width: 40vh;
     height: 40vh;
+
     margin-top: 8%;
-    background-color: lightgray;
     
     border-radius: 50%;
-
+    background-color: lightgray;
+    
     background-size: cover;
 }
-
 .person-detail-about {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
-.person-detail-about-social {
+.person-detail-picture-social {
     width: 40%;
 
+    margin-bottom: 5%;
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    margin-bottom: 5%;
 }
 /*****************/
 
+/* slideshow  */
 .view-sliderGallary {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
     position: relative;
 }
 
 .slider-container {
     width: 90vw;
-    height: 70vh;
+    height: 75vh;
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     overflow-x: scroll;
     overflow-y: hidden;
+
     scroll-snap-type: x mandatory;
 }
 
 .slider-cat {
     width: 90vw;
-    height: 70vh;
+    height: 75vh;
 
     display: flex;
     flex-direction: column;
 
     scroll-snap-align: center;
 }
-
 .slider-title{
+    width: 100%;
+    height: 20%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 100%;
-    height: 20%;
 }
 .slider-cat-card-wrap{
     width: 100%;
-    height: 100%;
+    height: 80%;
 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 .slider-cat-card {
     width: 30%;
     height: 100%;
 
+    background-color: white;
+
     border-radius: 8px;
     border: 2px solid lightgray;
-
-    overflow: hidden;
 }
-
 .slider-cat-card img {
-    display: block;
     width: 100%;
     height: 35%;
-    display: block;
+
     background-color: lightgray;
-}
 
-.slider-cat-card-content {
-    padding: 8px 16px;
+    display: block;
 }
+.slider-cat-card-content { padding: 8px 16px; }
 
-#nextCat, #prevCat {
+#btn-nextCat, #btn-prevCat {
     position: absolute;
     top: 50%;
-    opacity: 0.4;
-
-    transition: all 0.8s;
 }
-#nextCat:hover, #prevCat:hover {
-    opacity: 1;
-}
-
-#nextCat { right: 2%; }
-#prevCat { left: 2%; }
+#btn-nextCat { right: 3%; }
+#btn-prevCat { left: 3%;  }
 
 .dot-container {
     display: flex;
@@ -283,29 +278,38 @@ section[class*="view"]{
 .dot {
     width: var(--dotSize);
     height: var(--dotSize);
+
     margin-right: 10px;
+
     border-radius: 50%;
     background-color: lightgray;
+
     display: inline-block;
 }
-
 /*****************/
+
+/* 四點分類 */
 .view-card-cat {
     background-color: var(--Medium);
-    
     color: var(--TextLight);
 }
 
 .card-cat-title {
+    background-color: red;
+
     height: 20vh;
+
     display: flex;
     flex-direction: column;
-    justify-content: end;
     align-items: center; 
+    justify-content: center;
 }
 
 .card-cat-split {
+    background-color: blue;
+
     height: 80vh;
+    
     display: flex;
     align-items: center;
 }
