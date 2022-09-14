@@ -117,11 +117,15 @@ section[class*="view"]{
 
 /* 標題 */
 .view-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     overflow: hidden;
     position: relative;
 }
 #headcard {
-    width: 50vw;
+    width: 60vw;
     height: 50vh;
     
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
@@ -133,7 +137,8 @@ section[class*="view"]{
     justify-content: center;
 
     position: absolute; 
-    left: 25%;
+    left: 50%;
+    margin-left: -30vw;
 }
 /************************/
 
@@ -174,8 +179,6 @@ section[class*="view"]{
 .person-detail-picture img {
     width: 40vh;
     height: 40vh;
-
-    margin-top: 8%;
     
     border-radius: 50%;
     background-color: lightgray;
@@ -289,12 +292,12 @@ section[class*="view"]{
 /*****************/
 
 /* 四點分類 */
-.view-card-cat {
+.view-category {
     background-color: var(--Medium);
     color: var(--TextLight);
 }
 
-.card-cat-title {
+.category-title {
     height: 25vh;
 
     display: flex;
@@ -303,14 +306,14 @@ section[class*="view"]{
     justify-content: center;
 }
 
-.card-cat-split {
+.category-card-container {
     height: 75vh;
 
     display: flex;
     align-items: center;
 }
 
-.card-cat-split-content {
+.category-card {
     height: 100%;
     padding: 0 24px;
     
@@ -323,7 +326,7 @@ section[class*="view"]{
     
     position: relative;
 }
-.card-cat-split-content img {
+.category-card img {
     width: 18vh;
     height: 18vh;
     
