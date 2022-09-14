@@ -14,6 +14,7 @@
     --iFontSize: 2rem;
     --dotSize : 0.8rem;
 
+    --originalFontSize: 18px;
     --h1FontSize: 3.5rem;
     --h2FontSize: 2.3rem;
     --h3FontSize: 1.8rem;
@@ -27,13 +28,8 @@
     
     font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
-html {
-    font-size: 18px;
-}
-::-webkit-scrollbar {
-    display: none;
-}
-
+::-webkit-scrollbar { display: none; }
+html { font-size: var(--originalFontSize); }
 h1 {
     font-weight: 900;
     font-size: var(--h1FontSize);
@@ -61,25 +57,23 @@ h5 {
     margin-top: var(--h5MarginTop);
     line-height: 1.5;
 }
-
 i {
     width: fit-content;
     color: gray;
     font-size: var(--iFontSize);
     
     transition: all 0.5s;
-    opacity: 0.6;
+    opacity: 0.7;
 }
-i:hover {
-    opacity: 1;
+i:hover { 
+    opacity: 1; 
 }
-
 a {
     display: block;
-    margin-top: 3rem;
     font-size: var(--aFontSize);
-    text-decoration: none;
+    margin-top: 3rem;
     color: lightgray;
+    text-decoration: none;
 }
 a:hover {
     color: gray;
