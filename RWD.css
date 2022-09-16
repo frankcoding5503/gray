@@ -54,8 +54,63 @@
     /*****************/
 
     /*****************/
+    .slider-container {
+        height: 90vh;
+    }
+    .slider-title{
+        height: 15%;
+    }
+    .slider-cat-card-wrap{
+        height: 85%;
+
+        flex-direction: column;
+    }
+    .slider-cat-card {
+        width: 100%;
+        height: 30%;
+        display: flex;
+    }
+
+    .slider-cat-card img {
+        display: block;
+        background-color: lightgray;
+        width: 30%;
+        height: 100%;
+    }
+    .slider-cat-card-content {
+        width: 70%;
+    }
+    /*****************/
+
+    /*****************/
     .dot-container {
         display: none;
+    }
+    /*****************/
+
+    /*****************/
+    #actCard-container {
+        height: 80vh;
+    }
+    .act-card {
+        flex-direction: column;
+    }
+    .act-card-word {
+        width: 100%;
+        height: 50%;
+    }
+    .act-card-word-content {
+        max-height: 80%;
+    }
+    .card-act-picture {
+        width: 100%;
+        height: 50%;
+    }
+    .card-act-picture .act-picture-box {
+        width: 25vw;
+        height: 25vw;
+
+        border: 6px solid var(--Dark);
     }
     /*****************/
 }
@@ -85,9 +140,9 @@
         --h5FontSize: 1rem;
     
         --h2MarginTop:  0%;
-        --h3MarginTop:  0.5%;
-        --h4MarginTop:  1%;
-        --h5MarginTop:  1.5%;
+        --h3MarginTop:  0%;
+        --h4MarginTop:  0.5%%;
+        --h5MarginTop:  1%;
         
         font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
     }
@@ -122,6 +177,145 @@
         grid-template-rows: 1fr 1fr;
     }
     /*****************/
+
+    /*****************/    
+    .card-act-picture .act-picture-box {
+        width: 30vw;
+        height: 30vw;
+
+        border: 4px solid var(--Dark);
+    }
+    /*****************/
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --Light: #c4d3e4;
+        --Medium: #394c5d;
+        --Dark: #343b47;
+    
+        --DarkBlue: #1e3454;
+        --DarkGreen: #33444b;
+    
+        --TextLight: var(--Light);
+        --TextDark: var(--Medium);
+    
+        --aFontSize: 0.9rem;
+        --btnFontSize: 1rem;
+        --iFontSize: 2rem;
+        --dotSize : 0.8rem;
+    
+        --originalFontSize: 2vw;
+        --h1FontSize: 3.5rem;
+        --h2FontSize: 2.3rem;
+        --h3FontSize: 1.8rem;
+        --h4FontSize: 1.2rem;
+        --h5FontSize: 1rem;
+    
+        --h2MarginTop:  0%;
+        --h3MarginTop:  0%;
+        --h4MarginTop:  0%;
+        --h5MarginTop:  0.5%;
+        
+        font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+    }
+
+    /*****************/
+    .person-title {
+        height: 20vh;
+    }
+    .person-detail {
+        height: 80vh;
+        padding: 0 3%;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+    }
+    .person-detail-about {
+        text-align: center;
+        grid-row: 2;
+    }
+    .person-detail-pictures {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+    }
+    .person-detail-intro {
+        grid-row: 3;
+        grid-column: 1 / span 2;
+    }
+    .person-detail-picture img {
+        width: 25vw;
+        height: 25vw;
+    }
+    .person-detail-picture-social {
+        width: 40vw;
+    }
+    /*****************/
+
+    /*****************/
+    .card-act-picture .act-picture-box {
+        width: 40vw;
+        height: 40vw;
+
+        border: 4px solid var(--Dark);
+    }
+    /*****************/
+}
+
+@media only screen and (max-width: 400px) {
+    :root {
+        --Light: #c4d3e4;
+        --Medium: #394c5d;
+        --Dark: #343b47;
+    
+        --DarkBlue: #1e3454;
+        --DarkGreen: #33444b;
+    
+        --TextLight: var(--Light);
+        --TextDark: var(--Medium);
+    
+        --aFontSize: 0.9rem;
+        --btnFontSize: 1rem;
+        --iFontSize: 2rem;
+        --dotSize : 0.8rem;
+    
+        --originalFontSize: 1.5vw;
+        --h1FontSize: 3.5rem;
+        --h2FontSize: 2.3rem;
+        --h3FontSize: 1.8rem;
+        --h4FontSize: 1.2rem;
+        --h5FontSize: 1rem;
+    
+        --h2MarginTop: 0%;
+        --h3MarginTop: 0%;
+        --h4MarginTop: 0%;
+        --h5MarginTop: 0%;
+        
+        font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+    }
+
+    /*****************/
+    .category-title {
+        height: 15vh;
+    }
+    .category-card-container {
+        height: 85vh;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .category-card {
+        text-align: start;
+    }
+    .category-card img {
+        display: none;
+    }
+    .category-card h3 {
+        margin-right: 3%;
+    }
+    /*****************/
+
 }
 
 
