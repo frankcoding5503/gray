@@ -1,8 +1,11 @@
+
 window.addEventListener("scroll", ()=>{
-    let headcard = document.getElementById("headcard");
     let offset = window.pageYOffset;
+    let headcard = document.getElementById("headcard");
     
-    headcard.style.top = offset * 0.1 + 20 + "vh";
+    let move = (offset * 0.6) + 'px';
+
+    headcard.style.transform = 'translateY(' + move + ')';
 })
 
 const btn_nextCat = document.getElementById('btn-nextCat');
