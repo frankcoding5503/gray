@@ -176,6 +176,10 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     }
+    .category-card img {
+        width: 15vw;
+        height: 15vw;
+    }
     /*****************/
 
     /*****************/    
@@ -250,6 +254,13 @@
     }
     .person-detail-picture-social {
         width: 40vw;
+    }
+    /*****************/
+
+    /*****************/
+    .category-card img {
+        width: 20vw;
+        height: 20vw;
     }
     /*****************/
 
