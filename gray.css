@@ -323,8 +323,8 @@ section[class*="view"]{
     position: relative;
 }
 .category-card img {
-    width: 18vw;
-    height: 18vw;
+    width: 11vw;
+    height: 11vw;
     
     background-color: lightgray;
     border-radius: 50%;
