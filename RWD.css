@@ -88,6 +88,12 @@
     }
     /*****************/
 
+    .category-card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
     /*****************/
     #actCard-container {
         height: 80vh;
@@ -171,11 +177,7 @@
     /*****************/
 
     /*****************/
-    .category-card-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
+
     .category-card img {
         width: 15vw;
         height: 15vw;
